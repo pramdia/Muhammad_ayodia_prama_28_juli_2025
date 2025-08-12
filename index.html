@@ -1,68 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <title>Login</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .login-container {
-      background-color: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      text-align: center;
-    }
-
-    h1 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="login-container">
-    <h1>Login</h1>
-    <form>
-      <input type="text" placeholder="Masukkan Username" required />
-      <input type="password" placeholder="Masukkan Password" required />
-      <button type="submit">Login</button>
-      <p>Belum punya akun? <a href="#">Daftar akun</a></p>
-    </form>
-  </div>
+    <head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-seris
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .login-container {
+           background-color: white;
+           padding: 30px;
+           border-radius: 8px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           width: 300px;
+           text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-button: 20px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-slizing: border-box;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;}
+            
+            .error{
+                color: red;
+                font-size: 12px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="LOGIN container" >
+            <h1>Login</h1>
+            <form id="LoginForm"> 
+        <input type="text" id="Username" placeholder="Masukan Username" /> <br />
+        <input type="password" id="password" placeholder="Masukan password" /> 
+        <button type="submit">Login</button><br />
+        <div id="error-message" class="error"></div>
+        <p>Belum punya akun ? <a href="#">Daftar akun</a></p>
+            </form>
+        </div>
+<script>
+        document.getElementById("LoginForm").addEventListener('submit',function(event) {
+            event.preventDefault();
+        
+            var Username = document.getElementById('Username').value;
+            var password = document.getElementById('password').value;
+            var errorMessage = document.getElementById('error-message');
+        
+            if (Username === '' || password === ''){
+               errorMessage.textContent = 'tidak boleh kosong';
+            } else if (Username !== 'Rama' || password !=='123') {
+                errorMessage.textContent = 'Username atau password salah';
+            } else {
+                 errorMessage.textContent = ''
+                 alert('sukses login!!');
+            }
+        
+        
+        });
+     
+</script>
 
 </body>
 </html>
